@@ -4,7 +4,6 @@ import Item from '../listItem/index'
 
 
 type propType= {
-  children:React.ReactNode,
   data:Array<viewData>,
   className: string
 }

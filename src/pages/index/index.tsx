@@ -7,7 +7,7 @@ export default class Index extends Component {
   data: Array<viewData> = [
     {
       icon:'1',
-      title:'2'
+      title:'1'
     },
     {
       icon:'1',
@@ -15,10 +15,10 @@ export default class Index extends Component {
     },
     {
       icon:'1',
-      title:'2'
+      title:'3'
     },{
       icon:'1',
-      title:'2'
+      title:'4'
     }
   ]
   componentWillMount () { }

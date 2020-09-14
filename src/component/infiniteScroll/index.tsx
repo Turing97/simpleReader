@@ -16,6 +16,9 @@ export default class Index extends Component {
   props:propType
   constructor(props:propType) {
     super(props);
+    // this.state = {
+    //   data:this.props.data
+    // }
   }
   componentWillMount () { }
 
@@ -30,25 +33,15 @@ export default class Index extends Component {
   componentDidHide () { }
 
   render() {
+    let viewData: Array<viewData> = this.props.data
     return (
+      
       <View>
-        
-        <Item>1</Item>
-        <Item></Item>
-        <Item>2</Item>
-        <Item>3</Item>
-        <Item>4</Item>
-        <Item>5</Item>
-        <Item>6</Item>
-        <Item>7</Item>
-        <Item>8</Item>
-        <Item>9</Item>
-        <Item>10</Item>
-        <Item>11</Item>
-        <Item>12</Item>
-        <Item>13</Item>
-        <Item>14</Item>
-        <Item>15</Item>
+        {viewData.map((viewData1) => {
+          return(
+            <Item viewData = { viewData1 }></Item>
+          )
+        })}
       </View>
     )
   }

@@ -1,12 +1,27 @@
 import React, { Component } from 'react'
-import { ScrollView, View } from '@tarojs/components'
+import { Icon, ScrollView, View, Text } from '@tarojs/components'
 import Item from '../listItem/index'
 
-export default class Index extends Component {
 
+type propType= {
+  children:React.ReactNode,
+  data:Array<viewData>,
+  className: string
+}
+export type viewData = {
+  icon: string,
+  title: string
+}
+export default class Index extends Component {
+  props:propType
+  constructor(props:propType) {
+    super(props);
+  }
   componentWillMount () { }
 
-  componentDidMount () { }
+  componentDidMount () {
+    console.log(this.props)
+  }
 
   componentWillUnmount () { }
 
@@ -17,7 +32,9 @@ export default class Index extends Component {
   render() {
     return (
       <View>
+        
         <Item>1</Item>
+        <Item></Item>
         <Item>2</Item>
         <Item>3</Item>
         <Item>4</Item>

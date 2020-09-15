@@ -8,29 +8,19 @@ type tab = {
     icon: string;
     text: string;
 }
-// type tabs:Array<tab> = tabs
-
-
-// function items() {
-//     for (let i = 0; i < this.props.tabs.length; i++) {
-//         console.log('11')
-//         // return <Text> {this.props.tabs[i].text}</Text>
-
-//     }
-// }
+type propType ={
+    tabs: Array<tab>
+}
 export default class Menu extends Component {
-    props:Array<tab> = tabs
+    props: propType
 
-    constructor(props:tabs) {
+    constructor(props:propType) {
         super(props);
         // this.tabs = props.tabs
     }
-
     componentWillMount() {
         // this.props.tabs = []
         console.log()
-
-
     }
 
     componentDidMount() { }
@@ -44,7 +34,7 @@ export default class Menu extends Component {
     render() {
         return (
             <View>
-                {this.props.map((item, index) => (
+                {this.props.tabs.map((item, index) => (
                     <View className="class" key={index}>{item.text}</View>
                 ))}
             </View>

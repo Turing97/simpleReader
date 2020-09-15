@@ -24,7 +24,76 @@ export default class Index extends Component {
     },{
       icon:'1',
       title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
     }, {
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
+      icon:'1',
+      title:'4'
+    },{
       icon: '1',
       title: '2'
 
@@ -45,12 +114,7 @@ export default class Index extends Component {
     return (
 
       <View className='index' id="testid">
-
-        <Text>Hello world!</Text>
-
         <ScrollView data = { this.data } className="scrollContent"></ScrollView>
-        <Menu tabs = {[{ icon: '1', text: '1' }, { icon: '1', text: '2' }]}></Menu>
-
       </View>
 
     )

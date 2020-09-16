@@ -3,7 +3,6 @@ import * as React from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.less'
 import ScrollView, { viewData } from '../../component/infiniteScroll/index'
-
 import Menu from '../../component/menu/index'
 
 
@@ -114,9 +113,12 @@ export default class Index extends Component {
     return (
 
       <View className='index' id="testid">
-        <ScrollView data = { this.data } className="scrollContent"></ScrollView>
+        <ScrollView data = { this.data } touchBottom = { this.getData} className="scrollContent"></ScrollView>
       </View>
 
     )
+  }
+  getData() {
+    console.log('到达底部')
   }
 }

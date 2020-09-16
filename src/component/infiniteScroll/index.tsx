@@ -5,7 +5,8 @@ import Item from '../listItem/index'
 
 type propType= {
   data:Array<viewData>,
-  className: string
+  className: string,
+  touchBottom: Function
 }
 export type viewData = {
   icon: string,
@@ -54,7 +55,7 @@ export default class Index extends Component {
   bindScroll() {
     console.log(this.getScrollTop())
     if (this.getScrollTop() + this.getWindowHeight() == this.getScrollHeight()) {
-      alert("已经到最底部了！!");
+      this.props.touchBottom();
     }
   };
   componentWillMount () { }

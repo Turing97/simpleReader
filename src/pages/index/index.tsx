@@ -2,7 +2,7 @@ import { Component } from 'react'
 import * as React from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.less'
-import ScrollView, { viewData } from '../../component/infiniteScroll/index'
+import ScrollView, { addOrder, viewData } from '../../component/infiniteScroll/index'
 import Menu from '../../component/menu/index'
 
 
@@ -16,67 +16,101 @@ export default class Index extends Component {
       data :[
         {
           icon: '1',
-          title: '2'
+          title: '2',
+          key:'111112'
         },
         {
           icon: '1',
-          title: '2'
+          title: '2',
+          key:'111111'
         },
         {
-          icon:'1',
-          title:'3'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        }, {
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        },{
-          icon:'1',
-          title:'4'
-        }
+          icon: '1',
+          title: '2',
+          key:'1111331'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1111132'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1113211'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'11221'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1223'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'111231211'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'11551'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'111323211'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'111325451'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'11132132'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1211'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1325451'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1132'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'111321'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'123311'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1325411151'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1132333'
+        },
+
+
       ]
     }
   }
@@ -98,18 +132,37 @@ export default class Index extends Component {
 
     )
   }
-  getData() {
-    let tempState:viewData[] = []
-    for(let i = 0; i< Array(10).length; i++){
-      tempState.push(
-        {
-          title: i.toString(),
-          icon: i.toString()
-        }
-      )
+  getData(order: addOrder) {
+    console.log(order)
+    if(order == addOrder.order){
+      let tempState:viewData[] = []
+      for(let i = 0; i< Array(10).length; i++){
+        tempState.push(
+          {
+            title: i.toString(),
+            icon: i.toString(),
+            key:`123${Math.random()}`
+          }
+        )
+      }
+      this.setState({
+        data:this.state.data.concat(tempState)
+      })
+    } else if (order == addOrder.inversion) {
+      let tempState:viewData[] = []
+      for(let i = 0; i< Array(10).length; i++){
+        tempState.unshift(
+          {
+            title: i.toString(),
+            icon: i.toString(),
+            key:`123${Math.random()}`
+          }
+        )
+      }
+      this.setState({
+        data: tempState.concat(this.state.data)
+      })
     }
-    this.setState({
-      data:this.state.data.concat(tempState)
-    })
+    
   }
 }

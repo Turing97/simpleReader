@@ -20,7 +20,6 @@ export default class Menu extends Component {
     }
     componentWillMount() {
         // this.props.tabs = []
-        console.log()
     }
 
     componentDidMount() { }

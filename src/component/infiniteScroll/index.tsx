@@ -14,11 +14,13 @@ export type viewData = {
 }
 export default class Index extends Component {
   props:propType
+  // state:propType
+  state:any
   constructor(props:propType) {
     super(props);
-    // this.state = {
-    //   data:this.props.data
-    // }
+    this.state = {
+      data:[]
+    }
   }
   // 获取到页面的滚动距离
   getScrollTop():number {
@@ -53,12 +55,11 @@ export default class Index extends Component {
     return windowHeight;
   }
   bindScroll() {
-    console.log(this.getScrollTop())
     if (this.getScrollTop() + this.getWindowHeight() == this.getScrollHeight()) {
       this.props.touchBottom();
+
     }
   };
-  componentWillMount () { }
 
   componentDidMount () {
     window.addEventListener('scroll', ()=>{
@@ -80,9 +81,9 @@ export default class Index extends Component {
     let viewData: Array<viewData> = this.props.data
     return (
       <View id="ScrollView">
-        {viewData.map((viewData1) => {
+        {viewData.map((data) => {
           return(
-            <Item viewData = { viewData1 }></Item>
+            <Item viewData = { data }></Item>
           )
         })}
       </View>

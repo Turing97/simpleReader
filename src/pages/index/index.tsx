@@ -107,7 +107,37 @@ export default class Index extends Component {
         {
           icon: '1',
           title: '2',
-          key:'1132333'
+          key:'213'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1134322333'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'1132343f33'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'113sd2333'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'113dsa2333'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'113fds2333'
+        },
+        {
+          icon: '1',
+          title: '2',
+          key:'113233dsafdsa3'
         },
 
 
@@ -134,35 +164,27 @@ export default class Index extends Component {
   }
   getData(order: addOrder) {
     console.log(order)
+    let tempState:viewData[] = []
+    for(let i = 0; i< Array(10).length; i++){
+      tempState.push(
+        {
+          title: i.toString(),
+          icon: i.toString(),
+          key:`123${Math.random()}`
+        }
+      )
+    }
     if(order == addOrder.order){
-      let tempState:viewData[] = []
-      for(let i = 0; i< Array(10).length; i++){
-        tempState.push(
-          {
-            title: i.toString(),
-            icon: i.toString(),
-            key:`123${Math.random()}`
-          }
-        )
-      }
       this.setState({
-        data:this.state.data.concat(tempState)
+        data:this.state.data.concat(tempState).splice(tempState.length,this.state.data.length + tempState.length)
       })
+      // this.setState({
+      //   data:this.state.data.splice(0,tempState.length)
+      // })
     } else if (order == addOrder.inversion) {
-      let tempState:viewData[] = []
-      for(let i = 0; i< Array(10).length; i++){
-        tempState.unshift(
-          {
-            title: i.toString(),
-            icon: i.toString(),
-            key:`123${Math.random()}`
-          }
-        )
-      }
       this.setState({
-        data: tempState.concat(this.state.data)
+        data: tempState.reverse().concat(this.state.data).splice(0, this.state.data.length)
       })
     }
-    
   }
 }

@@ -74,15 +74,16 @@ export default class Index extends Component {
       this.props.touchBottom(addOrder.order);
 
     } else if (this.getScrollTop() <= 10){
-      this.props.touchBottom(addOrder.inversion);
       if(this.getScrollTop() == 0) {
         if (document.body) {
-          document.body.scrollTop = 1;
+          document.body.scrollTop = 5;
         }
         if (document.documentElement) {
-          document.documentElement.scrollTop = 1;
+          document.documentElement.scrollTop = 5;
         }
       }
+      this.props.touchBottom(addOrder.inversion);
+      
 
     }
 

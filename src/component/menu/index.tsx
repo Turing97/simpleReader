@@ -4,39 +4,36 @@ import { View, Text } from '@tarojs/components'
 import './index.less'
 
 
-type tab = {
-    icon: string;
-    text: string;
+export type tab = {
+	icon: string;
+	text: string;
 }
-type propType ={
-    tabs: Array<tab>
+type propType = {
+	tabs: Array<tab>
 }
 export default class Menu extends Component {
-    props: propType
+	props: propType
 
-    constructor(props:propType) {
-        super(props);
-        // this.tabs = props.tabs
-    }
-    componentWillMount() {
-        // this.props.tabs = []
-    }
+	constructor(props: propType) {
+		super(props);
+		// this.tabs = props.tabs
+	}
+	componentWillMount() { }
+	componentDidMount() { }
+	componentWillUnmount() { }
+	componentDidShow() { }
+	componentDidHide() { }
 
-    componentDidMount() { }
-
-    componentWillUnmount() { }
-
-    componentDidShow() { }
-
-    componentDidHide() { }
-
-    render() {
-        return (
-            <View>
-                {this.props.tabs.map((item, index) => (
-                    <View className="class" key={index}>{item.text}</View>
-                ))}
-            </View>
-        )
-    }
+	render() {
+		return (
+			<View className="menu-wrapper">
+				{this.props.tabs.map((item, index) => (
+					<View key={index} className="menu-item">
+						{item.text}
+						<img src='../../asset/person-notchecked.svg'></img>
+					</View>
+				))}
+			</View>
+		)
+	}
 }

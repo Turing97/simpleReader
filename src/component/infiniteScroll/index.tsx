@@ -108,7 +108,7 @@ export default class Index extends Component {
   render() {
     let viewData: Array<viewData> = this.props.data
     return (
-      <View id="ScrollView">
+      <View >
         {viewData.map((data) => {
           return(
             <Item viewData = { data } key= {data.key}></Item>

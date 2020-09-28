@@ -3,12 +3,13 @@ import * as React from 'react'
 import { View, Text } from '@tarojs/components'
 import './index.less'
 import ScrollView, { addOrder, viewData } from '../../component/infiniteScroll/index'
-import Menu from '../../component/menu/index'
+import Menu , { tab }from '../../component/menu/index'
 
 
 export default class Index extends Component {
   state:{
     data: Array<viewData>
+    // menu: Array<tab>
   }
   constructor(props:any) {
     super(props);
@@ -139,11 +140,12 @@ export default class Index extends Component {
           title: '2',
           key:'113233dsafdsa3'
         },
+      ],
 
-
-      ]
     }
+    
   }
+  
   componentWillMount() { }
 
   componentDidMount() { }
@@ -155,9 +157,16 @@ export default class Index extends Component {
   componentDidHide() { }
 
   render() {
+    var menu= [{icon:'list',text:'列表'}, {icon:'person',text:'个人'}]
+
     return (
-      <View className='index' id="testid">
-        <ScrollView data = { this.state.data } touchBottom = { this.getData.bind(this)} className="scrollContent"></ScrollView>
+      <View className='index'>
+        <View className="scrollContent">
+          <ScrollView data = { this.state.data } touchBottom = { this.getData.bind(this)} className="scrollContent"></ScrollView>
+        </View>
+        <View className="menu">
+          <Menu tabs= {menu}></Menu>
+        </View>
       </View>
 
     )

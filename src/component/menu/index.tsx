@@ -1,7 +1,8 @@
 import { Component } from 'react'
 import * as React from 'react'
-import { View, Text } from '@tarojs/components'
+import { View, Image, Text } from '@tarojs/components'
 import './index.less'
+import person from '../../asset/person-checked.svg'
 
 
 export type tab = {
@@ -29,8 +30,12 @@ export default class Menu extends Component {
 			<View className="menu-wrapper">
 				{this.props.tabs.map((item, index) => (
 					<View key={index} className="menu-item">
-						{item.text}
-						<img src='../../asset/person-notchecked.svg'></img>
+						<img src={ person } className="menu-icon"/>
+						<Text
+							className="menu-text"
+						>
+							{item.text}
+						</Text>
 					</View>
 				))}
 			</View>

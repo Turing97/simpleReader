@@ -12,9 +12,12 @@ type propType= {
   touchBottom: Function
 }
 export type viewData = {
-  icon: string,
-  title: string,
-  key: string
+  created: string,
+  description: string,
+  link: string,
+  pubDate: string,
+  title:string,
+  url:string
 }
 export default class Index extends Component {
   props:propType
@@ -107,14 +110,19 @@ export default class Index extends Component {
 
   render() {
     let viewData: Array<viewData> = this.props.data
-    return (
-      <View >
-        {viewData.map((data) => {
-          return(
-            <Item viewData = { data } key= {data.key}></Item>
-          )
-        })}
-      </View>
-    )
+    if (viewData) {
+      return (
+        <View >
+          {viewData.map((data) => {
+            return(
+              <Item viewData = { data } key= {data.created}></Item>
+            )
+          })}
+        </View>
+      )
+    } else {
+      return null
+    }
+    
   }
 }
